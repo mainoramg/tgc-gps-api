@@ -38,6 +38,18 @@
       <url-pattern>/v1/all/now/sn/*</url-pattern>
    </servlet-mapping>
 
+   <!-- ############################################################################ -->
+   <!-- ### Version 1: Get all data for range of location for given SN and dates ### -->
+   <!-- ############################################################################ -->
+   <servlet>
+      <servlet-name>api1LocationsRange</servlet-name>
+      <servlet-class>com.api1.LocationsRange</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>api1LocationsRange</servlet-name>
+      <url-pattern>/v1/all/between/sn/*</url-pattern>
+   </servlet-mapping>
+
    <!-- ######################################################################## -->
    <!-- ### Version 1: Get Google Maps link for latest location for given SN ### -->
    <!-- ######################################################################## -->
