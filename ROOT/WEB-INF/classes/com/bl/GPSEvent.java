@@ -31,6 +31,7 @@ public class GPSEvent
    private  String   netMnc;
    private  String   netLac;
    private  String   netCellId;
+   private  String   googleMapsLink;
 
    public GPSEvent()
    {
@@ -57,6 +58,7 @@ public class GPSEvent
       this.netMnc             =  "";
       this.netLac             =  "";
       this.netCellId          =  "";
+      this.googleMapsLink     =  "";
    }
    public GPSEvent( String data )
    {
@@ -88,6 +90,7 @@ public class GPSEvent
             this.netMnc             =  parts[14];  //04
             this.netLac             =  parts[15];  //42003
             this.netCellId          =  parts[16];  //12801#
+            this.googleMapsLink     =  getGoogleMapsLink(); //http://maps.google.com/maps?q=+10.00717,-084.27095
          }
       }
    }
@@ -120,6 +123,7 @@ public class GPSEvent
       this.netMnc             =  netMnc;
       this.netLac             =  netLac;
       this.netCellId          =  netCellId;
+      this.googleMapsLink     =  getGoogleMapsLink();
    }
 
    protected String getLatitudeDegree( String latitude, String cardinal )
