@@ -38,6 +38,18 @@
       <url-pattern>/v1/all/now/sn/*</url-pattern>
    </servlet-mapping>
 
+   <!-- ########################################################################################### -->
+   <!-- ### Version 1: Get latitude and longitude on DD format for latest location for given SN ### -->
+   <!-- ########################################################################################### -->
+   <servlet>
+      <servlet-name>api1LatestLatLngDD</servlet-name>
+      <servlet-class>com.api1.LatestLatLngDD</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>api1LatestLatLngDD</servlet-name>
+      <url-pattern>/v1/locationdd/now/sn/*</url-pattern>
+   </servlet-mapping>
+
    <!-- ############################################################################ -->
    <!-- ### Version 1: Get all data for range of location for given SN and dates ### -->
    <!-- ############################################################################ -->
