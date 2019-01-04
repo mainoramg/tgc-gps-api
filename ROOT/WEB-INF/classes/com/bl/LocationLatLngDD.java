@@ -23,9 +23,13 @@ public class LocationLatLngDD
       String   result   =  "";
       try
       {
-         double dd = Double.parseDouble(degree) + Double.parseDouble(minutes)/60 + Double.parseDouble(seconds)/(60*60);
+         double dd = Double.parseDouble(degree.replace("-","")) + Double.parseDouble(minutes)/60 + Double.parseDouble(seconds)/(60*60);
          DecimalFormat  df =  new DecimalFormat("###.######");
          result   =  df.format( dd );
+         if( cardinal.toUpperCase().equals("S") || cardinal.toUpperCase().equals("W") )
+         {
+            result = "-" + result;
+         }
       }
       catch ( Exception e )
       {
