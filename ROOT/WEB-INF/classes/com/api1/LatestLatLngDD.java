@@ -64,8 +64,8 @@ public class LatestLatLngDD extends HttpServlet
             try
             {
                long              validSn     =  Long.parseLong( sn );
-               Vector            records     =  DB.getData( "select latitude_cardinal, latitude_degree, latitude_minutes, latitude_seconds, longitude_cardinal, longitude_degree, longitude_minutes, longitude_seconds from gps_data where serial_number = '" + sn + "' order by location_stamp desc limit " + limit );
-               //Vector            records     =  DB.getData( "select latitude_cardinal, latitude_degree, latitude_minutes, latitude_seconds, longitude_cardinal, longitude_degree, longitude_minutes, longitude_seconds from gps_data_test order by stamp desc limit " + limit );
+               Vector            records     =  DB.getData( "select latitude_cardinal, latitude_degree, latitude_minutes, latitude_seconds, longitude_cardinal, longitude_degree, longitude_minutes, longitude_seconds, direction from gps_data where serial_number = '" + sn + "' order by location_stamp desc limit " + limit );
+               //Vector            records     =  DB.getData( "select latitude_cardinal, latitude_degree, latitude_minutes, latitude_seconds, longitude_cardinal, longitude_degree, longitude_minutes, longitude_seconds, direction from gps_data_test order by stamp desc limit " + limit );
                int               total       =  records.size();
                LocationsLatLngDD locations   =  new LocationsLatLngDD();
                for( int i = 0; i < total; i++ )
@@ -79,7 +79,8 @@ public class LatestLatLngDD extends HttpServlet
                                                 record.get("longitude_cardinal").toString(), 
                                                 record.get("longitude_degree").toString(), 
                                                 record.get("longitude_minutes").toString(), 
-                                                record.get("longitude_seconds").toString()
+                                                record.get("longitude_seconds").toString(), 
+                                                record.get("direction").toString()
                                              );
                   locations.addLocation( location );
                }

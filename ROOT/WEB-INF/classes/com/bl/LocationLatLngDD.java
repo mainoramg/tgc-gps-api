@@ -10,12 +10,15 @@ public class LocationLatLngDD
 {
    private  String   latitude;
    private  String   longitude;
+   private  String   angle;
 
    public LocationLatLngDD(   String latitudeCardinal, String latitudeDegree, String latitudeMinutes, String latitudeSeconds, 
-                              String longitudeCardinal, String longitudeDegree, String longitudeMinutes, String longitudeSeconds )
+                              String longitudeCardinal, String longitudeDegree, String longitudeMinutes, String longitudeSeconds, 
+                              String angle )
    {
-      this.latitude           =  getLatLonDD( latitudeCardinal, latitudeDegree, latitudeMinutes, latitudeSeconds );
-      this.longitude          =  getLatLonDD( longitudeCardinal, longitudeDegree, longitudeMinutes, longitudeSeconds );
+      this.latitude  =  getLatLonDD( latitudeCardinal, latitudeDegree, latitudeMinutes, latitudeSeconds );
+      this.longitude =  getLatLonDD( longitudeCardinal, longitudeDegree, longitudeMinutes, longitudeSeconds );
+      this.angle     =  angle;
    }
 
    protected String getLatLonDD( String cardinal, String degree, String minutes, String seconds )
