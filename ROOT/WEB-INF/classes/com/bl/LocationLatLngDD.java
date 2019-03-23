@@ -11,14 +11,16 @@ public class LocationLatLngDD
    private  String   latitude;
    private  String   longitude;
    private  String   angle;
+   private  String   stamp;
 
    public LocationLatLngDD(   String latitudeCardinal, String latitudeDegree, String latitudeMinutes, String latitudeSeconds, 
                               String longitudeCardinal, String longitudeDegree, String longitudeMinutes, String longitudeSeconds, 
-                              String angle )
+                              String angle, String stamp )
    {
       this.latitude  =  getLatLonDD( latitudeCardinal, latitudeDegree, latitudeMinutes, latitudeSeconds );
       this.longitude =  getLatLonDD( longitudeCardinal, longitudeDegree, longitudeMinutes, longitudeSeconds );
       this.angle     =  angle;
+      this.stamp     =  stamp;
    }
 
    protected String getLatLonDD( String cardinal, String degree, String minutes, String seconds )
